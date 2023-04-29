@@ -6,7 +6,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green-deployment
+  name: prod-green-deployment
   namespace: prod-green-project-ns
 spec:
   selector:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: greencontainer
-        image: devopesakscr.azurecr.io/prod-green-project-ns:#{Build.BuildId}#
+        image: devopesakscr.azurecr.io/prodgreenprojectacr:#{Build.BuildId}#
         ports:
         - containerPort: 80
 
