@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prod-ingress-rule
+  namespace: prod-green-project-ns
+  annotations:
+    kubernetes.io/ingress.class: public-nginx          
+    nginx.ingress.kubernetes.io/ssl-redirect: "false" 
+spec:
+  rules:
+  - host: prodgreenproject.alokeg.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: green-svc
+            port:
