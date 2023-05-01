@@ -16,4 +16,5 @@ spec:
         backend:
           service:
             name: green-svc
-            port: 80
+            port: 
+              number: 80
